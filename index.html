@@ -1,0 +1,1155 @@
+﻿<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Presentasi Portofolio Editorial Ã¢â‚¬â€ Social Media Content Creator</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: '#0B0F19',
+            electro: { 100: '#8FB3FF', 200: '#6EA8FE', 300: '#4D7CFE' },
+            viola: { 300: '#B79CFF', 400: '#9D6BFF' },
+            neonpink: '#F478CE',
+            mist: '#E9EFFF'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Didot', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['Bebas Neue', 'Impact', 'Anton', 'sans-serif']
+          },
+          boxShadow: {
+            'studio': '0 30px 70px -24px rgba(0, 0, 0, 0.75)',
+            'neon': '0 0 34px rgba(90, 120, 255, 0.35)',
+            'paper': '0 15px 40px -12px rgba(0, 0, 0, 0.55)',
+            'subtle': '0 4px 20px -2px rgba(0, 0, 0, 0.45)'
+          }
+        }
+      }
+    };
+  </script>
+<!-- Google Web Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Orbitron:wght@500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    html { scroll-behavior: smooth; }
+    body { background: #0B0F19; color: #fff; font-family: 'Inter', system-ui, sans-serif; }
+    ::selection { background: #4D7CFE; color: #fff; }
+
+    .font-display-title {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .font-future {
+      font-family: 'Orbitron', 'Bebas Neue', Impact, sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .font-editorial-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Neon gradient text */
+    .text-neon {
+      background: linear-gradient(105deg, #FFFFFF 0%, #CFDBFF 45%, #8FA6FF 75%, #CBB9FF 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .text-accent-glow {
+      color: #8FB3FF;
+      text-shadow: 0 0 22px rgba(90, 140, 255, 0.55);
+    }
+
+    /* ---- Glassmorphism panel ---- */
+    .glass-panel {
+      position: relative;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      box-shadow: 0 30px 60px -22px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+    }
+    .glass-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      box-shadow: 0 20px 45px -18px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 26px 55px -18px rgba(0, 0, 0, 0.7), 0 0 30px rgba(90, 130, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    /* ---- Hero showcase cards (4 vertical columns) ---- */
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(0, 229, 255, 0.45);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 8px 24px rgba(0, 150, 255, 0.15),
+                  0 0 18px rgba(0, 229, 255, 0.28),
+                  inset 0 0 24px rgba(255, 255, 255, 0.06);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    /* Semua media (img & video) seragam: cover, tanpa distorsi */
+    .hero-card > img,
+    .hero-card > video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    /* Video utama (all1.mp4) pada kartu pertama */
+    .work-media {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      background: #000;
+    }
+    .hero-card.is-hidden {
+      opacity: 0;
+      transform: translateY(14px) scale(0.98);
+      filter: blur(8px) brightness(0.6);
+    }
+    .hero-card.is-in img {
+      animation: imgEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes imgEnter {
+      from { opacity: 0; transform: translateY(12px); filter: blur(8px) brightness(0.6); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0) brightness(1); }
+    }
+    .hero-card img {
+      filter: brightness(0.9);
+      transition: filter 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, filter;
+    }
+    .hero-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border: 2px solid #00E5FF;
+      box-shadow: 0 15px 35px rgba(0, 229, 255, 0.4),
+                  0 0 26px rgba(168, 85, 247, 0.35),
+                  inset 0 0 30px rgba(255, 255, 255, 0.08);
+    }
+    .hero-card:hover img,
+    .hero-card:hover video {
+      filter: brightness(1.1);
+      transform: scale(1.05);
+    }
+    /* Ukuran default untuk semua kategori (Portrait) */
+    .card-item {
+      aspect-ratio: 3 / 4;
+      transition: all 0.3s ease;
+    }
+    /* Khusus saat kategori VISUAL & DRONE aktif (Landscape 16:9) */
+    .gallery-container.mode-drone .card-item {
+      aspect-ratio: 16 / 9;
+    }
+
+    /* ---- Pill category filter ---- */
+    .hero-filters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      position: relative;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      white-space: nowrap;
+      isolation: isolate;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .filter-btn::before {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: inherit;
+      z-index: -1;
+      background: rgba(0, 229, 255, 0.3);
+      filter: blur(10px);
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .filter-btn:hover {
+      color: #fff;
+      border-color: rgba(0, 229, 255, 0.55);
+    }
+    .filter-btn.active {
+      color: #fff;
+      border-color: #00E5FF;
+      background: rgba(0, 229, 255, 0.1);
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.35), 0 0 40px rgba(168, 85, 247, 0.28);
+      text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+    }
+    .filter-btn.active::before {
+      opacity: 1;
+      animation: pillPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pillPulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    /* ---- Infinite running text (marquee) ---- */
+    .hero-marquee {
+      margin-top: 3rem;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(0, 229, 255, 0.22);
+      border-bottom: 1px solid rgba(0, 229, 255, 0.22);
+      overflow: hidden;
+    }
+    .hero-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeTranslate 22s linear infinite;
+      will-change: transform;
+    }
+    .hero-marquee:hover .hero-marquee-track {
+      animation-play-state: paused;
+    }
+    .hero-marquee-group {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      color: rgba(255, 255, 255, 0.8);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .hero-marquee-group span {
+      padding: 0 1.5rem;
+    }
+    .hero-marquee-group .msep {
+      color: #00E5FF;
+      text-shadow: 0 0 12px rgba(0, 229, 255, 0.85), 0 0 26px rgba(168, 85, 247, 0.5);
+      padding: 0;
+    }
+    @keyframes marqueeTranslate {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(-50%, 0, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-marquee-track { animation: none; }
+    }
+
+    /* Neon number chip */
+    .chip-neon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(150, 175, 255, 0.35);
+      background: rgba(120, 150, 255, 0.10);
+      color: #DCE6FF;
+      box-shadow: inset 0 0 18px rgba(90, 130, 255, 0.15), 0 0 14px rgba(90, 130, 255, 0.10);
+    }
+
+    .thin-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(150, 170, 255, 0.45), transparent);
+    }
+
+    /* ---- Cyber "PORTOFOLIO" title ---- */
+    .text-cyber {
+      background: linear-gradient(90deg, #00E5FF 0%, #00B4FF 35%, #A855F7 68%, #EC4899 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 14px rgba(0, 229, 255, 0.45)) drop-shadow(0 0 34px rgba(168, 85, 247, 0.35));
+    }
+    /* Phase 2: letter-spacing expand + fade-in (ease-out-expo) */
+    .cyber-wrap {
+      position: relative;
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: cyberUnveil 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    }
+    /* Idle: energy pulse (breathing neon glow) */
+    .cyber-glow {
+      animation: energyPulse 4s ease-in-out infinite;
+    }
+    /* Idle: hologram laser sweep every ~4.6s */
+    .cyber-wrap::after {
+      content: "";
+      position: absolute;
+      top: -18%;
+      bottom: -18%;
+      left: 0;
+      width: 36%;
+      pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.55) 45%, rgba(168, 85, 247, 0.4) 55%, transparent);
+      filter: blur(7px);
+      animation: laserSweep 4.6s ease-in-out infinite;
+      will-change: transform;
+    }
+    .fade-rise {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeRise 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.9s forwards;
+    }
+    @keyframes cyberUnveil {
+      from { letter-spacing: 2px; opacity: 0; }
+      to { letter-spacing: 10px; opacity: 1; }
+    }
+    @keyframes fadeRise { to { opacity: 1; transform: translateY(0); } }
+    @keyframes energyPulse {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.45)) drop-shadow(0 0 26px rgba(168, 85, 247, 0.32)); }
+      50% { filter: drop-shadow(0 0 24px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 55px rgba(236, 72, 153, 0.55)); }
+    }
+    @keyframes laserSweep {
+      0% { transform: translate3d(-160%, 0, 0); opacity: 0; }
+      12% { opacity: 1; }
+      34% { transform: translate3d(290%, 0, 0); opacity: 1; }
+      46%, 100% { transform: translate3d(290%, 0, 0); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cyber-wrap, .cyber-glow, .fade-rise {
+        animation: none;
+        letter-spacing: 6px;
+        opacity: 1;
+      }
+      .cyber-wrap::after { display: none; }
+      .filter-btn.active::before, .hero-card.is-in img {
+        animation: none;
+      }
+      .hero-card.is-hidden {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+
+    /* ---- Slow Ambient Mesh Gradient background (GPU-friendly) ---- */
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    /* slow orbit wrapper: spins the whole field so orbs slowly move in circles */
+    .ambient-rotate {
+      position: absolute;
+      inset: -25%;
+      will-change: transform;
+      animation: rotateAmbient 55s linear infinite;
+    }
+    /* pre-blurred radial-gradient orbs: identical soft-glow look to blur(100-120px),
+       but keeps animation on transform-only so it stays at 60fps */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      will-change: transform;
+    }
+    .orb-blue {
+      width: 55vmax;
+      height: 55vmax;
+      top: -8%;
+      left: -10%;
+      opacity: 0.55;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 82, 255, 0.6) 0%, rgba(0, 82, 255, 0.2) 35%, transparent 72%);
+      animation: orbAura 18s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+    .orb-purple {
+      width: 52vmax;
+      height: 52vmax;
+      bottom: -14%;
+      right: -12%;
+      opacity: 0.5;
+      background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.6) 0%, rgba(124, 58, 237, 0.2) 35%, transparent 72%);
+      animation: orbAura 21s cubic-bezier(0.45, 0, 0.55, 1) -7s infinite;
+    }
+    .orb-magenta {
+      width: 44vmax;
+      height: 44vmax;
+      top: 38%;
+      left: 30%;
+      opacity: 0.45;
+      background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.5) 0%, rgba(124, 58, 237, 0.18) 35%, transparent 70%);
+      animation: orbAura 17s cubic-bezier(0.45, 0, 0.55, 1) -12s infinite;
+    }
+    @keyframes rotateAmbient {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes orbAura {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(0.85); }
+      25% { transform: translate3d(5vw, -4vh, 0) scale(1.15); }
+      55% { transform: translate3d(-4vw, 5vh, 0) scale(1.2); }
+      80% { transform: translate3d(3vw, 2vh, 0) scale(0.9); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ambient-rotate, .orb { animation: none !important; }
+    }
+    /* ===== Hero Cyber: kurva cahaya neon cyan simetris atas & bawah ===== */
+    .hero-curve {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150vmax;
+      height: 22vh;
+      border: 1px solid transparent;
+      border-left-color: var(--cyan);
+      border-radius: 50%;
+      filter: drop-shadow(0 0 22px rgba(34, 211, 238, 0.55));
+      opacity: 0;
+      pointer-events: none;
+    }
+    .hero-curve--top {
+      top: -4%;
+      border-top-color: var(--cyan);
+      animation: heroReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+    }
+    .hero-curve--bottom {
+      bottom: -6%;
+      border-bottom-color: var(--cyan);
+      transform: translateX(-50%) rotate(180deg);
+      animation: heroReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+    .hero-glowline {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 105%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, var(--cyan), var(--cyan), transparent);
+      filter: drop-shadow(0 0 16px rgba(34, 211, 238, 0.6));
+      opacity: 0;
+      pointer-events: none;
+    }
+    .hero-glowline--top {
+      top: 5%;
+      animation: heroReveal 1.2s ease 0.1s forwards, heroPulse 3.4s ease-in-out 1.4s infinite;
+    }
+    .hero-glowline--bottom {
+      bottom: 7%;
+      animation: heroReveal 1.2s ease 0.18s forwards, heroPulse 3.4s ease-in-out 1.7s infinite;
+    }
+    @keyframes heroReveal {
+      to { opacity: 1; }
+    }
+    @keyframes heroPulse {
+      0%, 100% { opacity:  soubory; }
+      50% { opacity: soubory; }
+    }
+    /* ===== Tipografi center hero ===== */
+    .hero-cyber {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .cyber-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      opacity: 0;
+      animation: heroRise 0.9s ease 0.3s forwards;
+    }
+    .cyber-title {
+      font-family: 'Rajdhani', 'Inter', sans-serif;
+      font-weight: 800;
+      line-height: 0.92;
+      font-size: clamp(54px, 12vw, 148px);
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #fff 55%, rgba(255, 255, 255, 0.55));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      animation: heroRise 1s ease 0.45s forwards;
+    }
+    .cyber-year {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: clamp(42px, 8vw, 92px);
+      color: var(--cyan);
+      text-shadow: 0 0 26px rgba(34, 211, 238, 0.5);
+      opacity: 0;
+      animation: heroRise 1s ease 0.62s forwards;
+    }
+    .cyber-chips {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .cyber-chip {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      padding: 8px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      opacity: 0;
+      animation: heroRise 1s ease 0.78s forwards;
+    }
+    .cyber-chip:nth-child(2) { animation-delay: 0.88s; }
+    @keyframes heroRise {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(16px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-curve, .hero-glowline, .cyber-eyebrow, .cyber-title, .cyber-year, .cyber-chip { animation: none !important; opacity: 1 !important; }
+    }
+  
+    }    /* ===== ABOUT: BACKGROUND TITLE "INTRODUCTION" (CERAH & MENYALA) ===== */
+    .bg-text-intro {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+      font-family: 'Inter', 'Syne', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      text-align: center;
+      color: rgba(210, 225, 255, 0.7);
+      text-shadow: 0 0 25px rgba(99, 102, 241, 0.9), 0 0 50px rgba(139, 92, 246, 0.7);
+      animation: digitalFloat 6s ease-in-out infinite;
+    }
+    @keyframes digitalFloat {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.55; }
+      50% { transform: translateX(-50%) translateY(-6px); opacity: 0.85; text-shadow: 0 0 35px rgba(99, 102, 241, 1), 0 0 70px rgba(139, 92, 246, 0.85); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bg-text-intro { animation: none; opacity: 0.6; }
+    }
+    /* ===== ABOUT CARD COMPACT (tidak membungkus Introduction) ===== */
+    .about-main-card {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      background: linear-gradient(135deg, rgba(15,18,48,0.95), rgba(8,10,30,0.95));
+      border: 1.5px solid rgba(120,140,255,0.4);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(60,80,220,0.25);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      z-index: 2;
+    }
+    .about-photo-card {
+      width: 230px;
+      height: 250px;
+      flex-shrink: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      background: #000;
+    }
+    .profile-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+</style>
+</head>
+<body class="bg-base text-white min-h-screen antialiased selection:bg-electro-300 selection:text-white pb-24">
+<!-- Ambient Slow Mesh Gradient (Electric Blue -> Purple -> Magenta) -->
+<div class="ambient" aria-hidden="true">
+<div class="ambient-rotate">
+<span class="orb orb-blue"></span>
+<span class="orb orb-purple"></span>
+<span class="orb orb-magenta"></span>
+</div>
+</div>
+<!-- BEGIN: SiteHeader -->
+<header class="w-full border-b border-white/10 bg-white/5 backdrop-blur-xl sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between text-xs tracking-widest uppercase font-medium text-white/60">
+<div class="flex items-center space-x-6">
+<a class="hover:text-white transition-colors" href="#about">Tentang Saya</a>
+<a class="hover:text-white transition-colors" href="#mission">Nilai Saya</a>
+<a class="hover:text-white transition-colors" href="#overview">Sosial Media</a>
+<a class="hover:text-white transition-colors" href="#overview">Mengapa?</a>
+</div>
+<div class="font-display-title text-xl tracking-wider text-accent-glow font-normal">
+        Studio Perspective
+      </div>
+<div class="flex items-center space-x-6">
+<a class="hover:text-white transition-colors" href="#overview">Proyek</a>
+<a class="hover:text-white transition-colors" href="#overview">Layanan</a>
+<a class="hover:text-white transition-colors font-semibold text-white" href="#contact">Kontak</a>
+</div>
+</div>
+</header>
+<!-- END: SiteHeader -->
+<!-- Main Container -->
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 space-y-20">
+<!-- BEGIN: TopHeroTitle -->
+<section class="glass-panel rounded-2xl p-8 md:p-14 transition-all duration-300">
+<!-- Pill Category Filter -->
+<div class="hero-filters" role="group" aria-label="Kategori karya">
+<button class="filter-btn active" data-filter="all" type="button">[ All Works ]</button>
+<button class="filter-btn" data-filter="visual" type="button">[ Visual &amp; Drone ]</button>
+<button class="filter-btn" data-filter="photography" type="button">[ Photography ]</button>
+<button class="filter-btn" data-filter="leadership" type="button">[ Leadership &amp; Storytelling ]</button>
+</div>
+<!-- Gallery Spread: 4-Column Grid with Real Media Files -->
+<div class="gallery-container grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10">
+<!-- Card 1 - VIDEO all1.mp4 (auto loop) -->
+<div class="hero-card card-item relative">
+<video autoplay muted loop playsinline class="work-media">
+<source src="media/all1.mp4" type="video/mp4">
+Browser kamu tidak mendukung tag video.
+</video>
+<div class="absolute inset-0 bg-base/10 pointer-events-none"></div>
+</div>
+<!-- Card 2 - all2.jpg -->
+<div class="hero-card card-item relative">
+<img alt="Karya Portofolio 2" class="card-photo w-full h-full object-cover" decoding="async" src="media/all2.jpg">
+<div class="absolute inset-0 bg-base/10 pointer-events-none"></div>
+</div>
+<!-- Card 3 - all3.jpg -->
+<div class="hero-card card-item relative">
+<img alt="Karya Portofolio 3" class="card-photo w-full h-full object-cover" decoding="async" src="media/all3.jpg">
+<div class="absolute inset-0 bg-base/10 pointer-events-none"></div>
+</div>
+<!-- Card 4 - all4.jpg -->
+<div class="hero-card card-item relative">
+<img alt="Karya Portofolio 4" class="card-photo w-full h-full object-cover" decoding="async" src="media/all4.jpg">
+<div class="absolute inset-0 bg-base/10 pointer-events-none"></div>
+</div>
+</div>
+<!-- Massive Condensed Headline & Subtitle Lockup -->
+<div class="pt-4 text-center">
+<div class="cyber-wrap">
+<h1 id="heroTitle" class="font-future text-[clamp(2.5rem,10vw,9rem)] leading-[1.2] text-cyber cyber-glow tracking-normal uppercase mx-auto max-w-full" style="white-space:nowrap; width:100%; text-align:center; overflow:visible;">
+            Portofolio
+          </h1>
+</div>
+</div>
+<!-- Infinite running text (marquee) -->
+<div class="hero-marquee" aria-label="Keahlian">
+<div class="hero-marquee-track">
+<div class="hero-marquee-group">
+<span>Content Creator</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Public Speaking</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Photography</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Graphic Design</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Drone Pilot</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Creative Storytelling</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Creative Leadership</span><span class="msep">Ã¢Å“Â¦</span>
+</div>
+<div class="hero-marquee-group" aria-hidden="true">
+<span>Content Creator</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Public Speaking</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Photography</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Graphic Design</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Drone Pilot</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Creative Storytelling</span><span class="msep">Ã¢Å“Â¦</span>
+<span>Creative Leadership</span><span class="msep">Ã¢Å“Â¦</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TopHeroTitle -->
+<!-- BEGIN: SectionAboutMe -->
+<section class="relative" id="about" style="position: relative; overflow: visible;">
+  <!-- Giant Outlined Background Title -->
+  <div class="flex flex-col items-center lg:items-start relative z-0 mb-[-1.75rem] lg:mb-[-2.5rem] px-2 overflow-visible">
+    <h2 class="bg-text-intro" aria-hidden="true">Introduction</h2>
+    <!-- Floating Software Badges (3D floating glow) -->
+    <div class="flex flex-wrap justify-center lg:justify-end items-center gap-3 mt-2 lg:absolute lg:-right-2 lg:top-0 lg:mt-0">
+      <!-- Ae -->
+      <span class="chip-neon w-12 h-12 rounded-xl flex items-center justify-center font-display-title text-sm uppercase tracking-wide" style="animation:floatY 5.5s ease-in-out infinite;">Ae</span>
+      <!-- Pr -->
+      <span class="chip-neon w-12 h-12 rounded-xl flex items-center justify-center font-display-title text-sm uppercase tracking-wide" style="animation:floatY 6.5s ease-in-out infinite 0.4s;">Pr</span>
+      <!-- Ps -->
+      <span class="chip-neon w-12 h-12 rounded-xl flex items-center justify-center font-display-title text-sm uppercase tracking-wide" style="animation:floatY 7s ease-in-out infinite 0.9s;">Ps</span>
+      <!-- Ai -->
+      <span class="chip-neon w-12 h-12 rounded-xl flex items-center justify-center font-display-title text-sm uppercase tracking-wide" style="animation:floatY 6s ease-in-out infinite 1.3s;">Ai</span>
+    </div>
+  </div>
+
+  <!-- Main Glassmorphism Card -->
+  <div class="glass-panel relative z-10 rounded-3xl p-8 md:p-12 lg:p-16" style="border:1px solid rgba(56,189,248,0.35); box-shadow:0 0 0 1px rgba(56,189,248,0.12), inset 0 0 60px rgba(30,58,138,0.18), 0 30px 80px rgba(0,0,0,0.45);">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <!-- Left Column: ABOUT + ME pill + Bio + Social -->
+      <div class="lg:col-span-7 order-2 lg:order-1 space-y-7">
+        <div class="flex items-center gap-4">
+          <h3 class="font-display-title text-accent-glow text-3xl md:text-4xl uppercase tracking-tight leading-none">
+            About
+          </h3>
+          <span class="chip-neon px-4 py-1 rounded-full font-display-title text-xs md:text-sm uppercase tracking-widest">
+            Me
+          </span>
+        </div>
+        <p class="text-white text-base md:text-lg leading-relaxed max-w-xl">
+          Hi, I'm <strong class="text-white font-semibold">Rama Wijaya Putra</strong>â€”a Visual Content Designer &amp; Videographer based in Indonesia. I specialize in high-impact
+          <span class="text-accent-glow font-medium">Drone Videography</span>,
+          <span class="text-accent-glow font-medium">Creative Photo Editing</span>, and
+          <span class="text-accent-glow font-medium">Motion Graphics</span>. Driven by a passion for visual storytelling and modern digital aesthetics, I blend technical precision with creative concepting to build engaging visual experiences. Always open to new challenges and pushing creative boundaries.
+        </p>
+        <!-- Divider -->
+        <div class="thin-divider"></div>
+        <!-- Social Media Pill Buttons -->
+        <div class="flex flex-wrap gap-3">
+          <a href="#" class="chip-neon inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs tracking-wide transition-all duration-300">
+            <!-- Instagram -->
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            @ramawijayaputra
+          </a>
+          <a href="#" class="chip-neon inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs tracking-wide transition-all duration-300">
+            <!-- TikTok -->
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+            TikTok
+          </a>
+          <a href="#" class="chip-neon inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs tracking-wide transition-all duration-300">
+            <!-- YouTube -->
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.54 12 3.54 12 3.54s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.6 15.6V8.4l6.5 3.6-6.5 3.6z"/></svg>
+            YouTube
+          </a>
+          <a href="#" class="chip-neon inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs tracking-wide transition-all duration-300">
+            <!-- LinkedIn -->
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.72 8.39a4.76 4.76 0 0 0-3.62 1.29L12.92 8h-3.94v13h3.87v-6.9a1.95 1.95 0 0 1 1.94-2.09 1.83 1.83 0 0 1 1.88 1.95V21H20.8v-7.28a6.63 6.63 0 0 0-4.08-5.33zM2.8 2.5a2.3 2.3 0 1 0 0 2.31 2.27 2.27 0 0 0 0-2.31zM3.1 8.06H.48V21H3.1z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Profile Photo Frame -->
+      <div class="lg:col-span-5 order-1 lg:order-2">
+        <div class="glass-card rounded-2xl p-3" style="border:1px solid rgba(56,189,248,0.3); box-shadow:0 0 40px rgba(0,229,255,0.15);">
+          <div class="aspect-[4/5] overflow-hidden rounded-xl bg-white/5">
+            <img alt="Potret profil Rama Wijaya Putra" class="w-full h-full object-cover object-center" style="width:100%; height:100%; object-fit:cover;" src="media/profile.jpeg"/>
+          </div>
+          <div class="mt-3 flex items-center justify-between px-1 text-[11px] text-white/40 font-editorial-serif italic">
+            <span>Profile Ã¢â‚¬â€ Rama Wijaya Putra</span>
+            <span>Ruang Hangat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: SectionAboutMe -->
+
+<!-- BEGIN: SectionDeckOverview -->
+<section class="space-y-6" id="overview">
+<!-- Section Intro Banner -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 px-2">
+<div>
+<span class="text-[11px] tracking-[0.3em] uppercase text-accent-glow font-semibold block mb-1">Arketipe Spread</span>
+<h3 class="font-display-title text-4xl sm:text-5xl text-neon tracking-tight uppercase">
+            Presentasi Dek Multipage
+          </h3>
+</div>
+<p class="text-xs text-white/50 max-w-sm">
+          Gambaran fisik dari sistem layout editorial multi-halaman yang tersinkronisasi untuk deck pitch dan panduan visual.
+        </p>
+</div>
+<!-- Panoramic Visual Grid Displaying All Presentation Slides -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Deck Slide 1: Mission & Vision Card -->
+<article class="glass-card rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-[9px] uppercase tracking-widest text-white/40 pb-3 border-b border-white/10">
+<span>Lembar Deck 02</span>
+<span>Ideologi</span>
+</div>
+<div class="py-4 space-y-3">
+<div class="h-32 w-full overflow-hidden rounded bg-white/5">
+<img alt="Gambar misi" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcNpjqIcswgz5UsDLEbSByAXz155Si7wNfv-JeImMhNIeg7_7-CDilw7T1-QJ9d8zwV6uCqsozflYFd-oI2fakRDNA09I-3g1HQCQaBvezdBhj13YhZmVjYbiyY-Qb0K9_GsfF0ZVtE3IyuHevjtQFNsMwUWzR-DNt0Z4tk1EiljXmXD65zFlfaPLvLG6UUMxlYwF7XiIyrtaN5CmBP3KvsHOiu24MixJ0AiUT3odlGw3z43vli_F8"/>
+</div>
+<h4 class="font-display-title text-2xl uppercase tracking-tight text-white">Misi &amp; Visi</h4>
+<p class="text-xs text-white/55 line-clamp-3">Pernyataan misi adalah fondasi penting bagi bisnis atau kreator untuk mengekspresikan tujuan dan suara visual dengan otentisitas yang disengaja.</p>
+</div>
+<div class="text-[10px] tracking-wider uppercase font-semibold text-accent-glow pt-2 border-t border-white/10 flex justify-between">
+<span>Lihat Bab</span>
+<span>Ã¢â€ â€™</span>
+</div>
+</article>
+<!-- Deck Slide 2: Social Media Posts -->
+<article class="glass-card rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-[9px] uppercase tracking-widest text-white/40 pb-3 border-b border-white/10">
+<span>Lembar Deck 03</span>
+<span>Umpan Konten</span>
+</div>
+<div class="py-4 space-y-3">
+<div class="grid grid-cols-3 gap-1.5 h-32 overflow-hidden rounded">
+<img alt="Umpan 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOCquw3FPzji8k00JUPdladyPL2XfahuTUH990qK3943Y0uXlw43h3OoGzUmhXeoqv1V6XTV8GZ670XOGnDXTL_pkm8ygEIkkBI0NpAJe44yZOjYYa-CkkFgmBI4U1h6Z3jZA63Fyh375A-8hd1jfCf5xlmjG5KrXIhZt8DflC3WJDD0kry1lP2_8QuPHVtI3bK4vByb7ApxCPWdqClyQQSwSDB7ED3h3R8MYI4CSLXvmQDt--3sxF"/>
+<img alt="Umpan 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnuDDjp36pXyV6U4RQkTaqvHVlXXl7JfQIeqdS7qw-nf2js2YAeS68KwYcJzS2dIihl1ruicf5TKBPldttF-JS3JEKpZxj2uf7yUp5aVk4u2crY3aJkYDkKUMLv3lISYEYvSP8c00_AV0LXhEEMGV2NmDskxvGwiZpbvjCZqgk4cYTJcWVGiqLlIbR4S3weZ-HFkOm-H62jV5X0VMeJ3Eju4XLq_dEQHh79mmWsG79wPXxVs5e_Cu8"/>
+<img alt="Umpan 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-64gW1YSf1iu6g-5aBs9_DOUh0X_Q2XwCEUOSR_7V3xrphluai_JDEE166tD3N6z-OL-odarwj5BvHWSiMtePiBZu2IIbpEi5pl-2G5djyc72nQl5YPkecQ0UGqCLveiR0IvEQyHeiRtzj-33nQhPNXxQ-G8Vbnkwgkfl9E8OAwCX3b138QNhTkhWJ9HMBgez1_u0vlgPtjlnyJ_bvVWJMEQsZrDq8qXNzguxrGFrQkFPnK0Qho2S"/>
+</div>
+<h4 class="font-display-title text-2xl uppercase tracking-tight text-white">Umpan Sosial Media</h4>
+<p class="text-xs text-white/55 line-clamp-3">Kurasi tiga kolom dengan harmoni warna yang kohesif, ritme grid yang serasi, dan copy storytelling yang autentik.</p>
+</div>
+<div class="text-[10px] tracking-wider uppercase font-semibold text-accent-glow pt-2 border-t border-white/10 flex justify-between">
+<span>Grid 3 Kolom</span>
+<span>Ã¢â€ â€™</span>
+</div>
+</article>
+<!-- Deck Slide 3: YouTube & Video Layout -->
+<article class="glass-card rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-[9px] uppercase tracking-widest text-white/40 pb-3 border-b border-white/10">
+<span>Lembar Deck 04</span>
+<span>Format Video</span>
+</div>
+<div class="py-4 space-y-3">
+<div class="h-32 w-full overflow-hidden rounded bg-white/5 flex items-center justify-center p-2">
+<div class="w-16 h-28 border border-white/20 rounded overflow-hidden mx-auto">
+<img alt="Bingkai reel" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGCWc3Fy3rWRsRWSJFY34PWqA7gvOxOebWvMOn5wVdpRhy7paX5Ok-M7ZMCrelWlrtBtdPq7guk7RvGVbpOIe2k4wzaxJg3Hi3V0W1cL3SS7LH2ClIAgTJqVq4rtB0Utgfx3Ss0Y7Raj23hiII7fIcOosaj6BNTGaOehr_eLGTEnS1Y2kYwTX4aBtDMmjluKeu7nsbttbbwQmsypu98G_S1mD9MX40kBC1ju2JVXIZf7lE62N-sVTt"/>
+</div>
+<div class="w-28 h-20 border border-white/20 rounded overflow-hidden ml-2">
+<img alt="Video horizontal" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFhmUHsiAe6nsPYl9fYGTDIJ1PHK4LdWJIFOf_QuB1nVNR9vZ8S1dqgkLZJlsWR8M7FjTsMg2rI89aNaN2jLvWslYv7iTuSH9ZTiM_qMVT1QI2Uk3CPCAtKlaR9BLYC5zddkCP_bdZDE4g1ez1Wga0rx9Eimlx1xoG-ELG6WzZ3h9jLIt0Fkh0agIoda6iu3OVoGTg-E5YYoAeJpVuGmkjHUkOzsICu7sXsJRXrckhlgiPi84sLrKh"/>
+</div>
+</div>
+<h4 class="font-display-title text-2xl uppercase tracking-tight text-white">YouTube &amp; Motion</h4>
+<p class="text-xs text-white/55 line-clamp-3">Konten video multi-perangkat mencakup reel short-form 9:16 dan materi editorial sinematik horizontal.</p>
+</div>
+<div class="text-[10px] tracking-wider uppercase font-semibold text-accent-glow pt-2 border-t border-white/10 flex justify-between">
+<span>Format Video</span>
+<span>Ã¢â€ â€™</span>
+</div>
+</article>
+<!-- Deck Slide 4: Client Promise -->
+<article class="glass-card rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-[9px] uppercase tracking-widest text-white/40 pb-3 border-b border-white/10">
+<span>Lembar Deck 05</span>
+<span>Komitmen</span>
+</div>
+<div class="py-4 space-y-3">
+<div class="h-32 w-full overflow-hidden rounded bg-white/5 border border-white/10 p-3 font-editorial-serif text-[11px] text-white/60 italic">
+              "Saya sangat bangga menghadirkan karya kreatif bernilai tinggi yang disesuaikan langsung dengan audiens khas Anda..."
+            </div>
+<h4 class="font-display-title text-2xl uppercase tracking-tight text-white">Janji Untuk Klien</h4>
+<p class="text-xs text-white/55 line-clamp-3">Hasil kerja yang transparan, standar produksi yang ketat, dan jadwal yang jelas untuk setiap kampanye.</p>
+</div>
+<div class="text-[10px] tracking-wider uppercase font-semibold text-accent-glow pt-2 border-t border-white/10 flex justify-between">
+<span>Etika Klien</span>
+<span>Ã¢â€ â€™</span>
+</div>
+</article>
+<!-- Deck Slide 5: The 4-Step Process -->
+<article class="glass-card rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-[9px] uppercase tracking-widest text-white/40 pb-3 border-b border-white/10">
+<span>Lembar Deck 06</span>
+<span>Metodologi</span>
+</div>
+<div class="py-4 space-y-3">
+<div class="h-32 w-full grid grid-cols-2 gap-2 bg-white/5 rounded p-2 text-[10px] uppercase tracking-wider text-white/55 font-medium">
+<div class="p-1 border-b border-white/15">01. Riset</div>
+<div class="p-1 border-b border-white/15">02. Moodboard</div>
+<div class="p-1">03. Produksi</div>
+<div class="p-1">04. Analitik</div>
+</div>
+<h4 class="font-display-title text-2xl uppercase tracking-tight text-white">Proses 4 Langkah</h4>
+<p class="text-xs text-white/55 line-clamp-3">Perjalanan sistematis yang mengubah konsep brand mentah menjadi hasil editorial berengagement tinggi yang nyata.</p>
+</div>
+<div class="text-[10px] tracking-wider uppercase font-semibold text-accent-glow pt-2 border-t border-white/10 flex justify-between">
+<span>Alur Kerja</span>
+<span>Ã¢â€ â€™</span>
+</div>
+</article>
+<!-- Deck Slide 6: Story Format Capsules -->
+<article class="glass-card rounded-xl p-5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-[9px] uppercase tracking-widest text-white/40 pb-3 border-b border-white/10">
+<span>Lembar Deck 07</span>
+<span>Cerita Mobile</span>
+</div>
+<div class="py-4 space-y-3">
+<div class="h-32 flex justify-center gap-2 items-center">
+<div class="w-12 h-24 rounded-full border border-white/20 overflow-hidden">
+<img alt="Kapsul 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNJ0bylH2WwSo4haJICQX3DQtigQ4KzST5YzFSy5MS_Gp7G3M9Yi7UFHN9i3n5sgglUQwiEMxVCgc9PTLA_97h4q59LGWHfZ98C--wxkeKj3XOTVFH7uIRvog59mOrzmFcT4_VI_SZVPx_KC_TZ_Zob3BMS-F5bfPARQeU35kbAUcuQZvGf0V8QrPZagIBbemwokusEFxkjfD48LOLxI7eHV6lOoK2C1q7WsCTv1U1PDxVgyuqY5X4"/>
+</div>
+<div class="w-12 h-24 rounded-full border border-white/20 overflow-hidden">
+<img alt="Kapsul 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBatvUvHnczogztyZBBedWNGBUV5j5BXpZnPMKcq0MCYGEKUuKtKx_ol37lk6ArqEYCxpkHd9k7eemznSUKc_uw63cuBuOzAebGyZ8nPlngmp642LROaKWhsP1A-wNCnOqdJXiNlfarZVrylcu1PyD1YzDytigw9Ed4AFUmyulY45xDxQOsD7tuJvyT4PeCgxQMiCpl2AYG0Kouk4l4Mn4fUQ4ARyl2EK7H2K5hDLHxQSXEHYsVmHII"/>
+</div>
+<div class="w-12 h-24 rounded-full border border-white/20 overflow-hidden">
+<img alt="Kapsul 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFFiJTwoCCCry-qx1VOLz3s2WakAiMKEsV9k0x66iBiXu7WU_l8mjdxHn-cXEbTp90UCc2gbaUSVWBz_IYG8zADqcYo46JgwTQsCEDYFP_5fSoMrJhuWZHewjVmcXuEDEX3GfWxCzv9Tg1zZzHeibC8mjpdaJ850TErd0MSLZJ2hkXudELYZH950sV6olMkc_mb9OQfH3a0h6YeMC3dpg1xVNgBavl7WKhgsGiGDUWdBQwxuXfLEdl"/>
+</div>
+</div>
+<h4 class="font-display-title text-2xl uppercase tracking-tight text-white">Perspektif Kurasi</h4>
+<p class="text-xs text-white/55 line-clamp-3">Pill cerita membulat yang menyajikan momen autentik sehari-hari dan keselarasan gaya hidup.</p>
+</div>
+<div class="text-[10px] tracking-wider uppercase font-semibold text-accent-glow pt-2 border-t border-white/10 flex justify-between">
+<span>Sorotan</span>
+<span>Ã¢â€ â€™</span>
+</div>
+</article>
+</div>
+</section>
+<!-- END: SectionDeckOverview -->
+<!-- BEGIN: SectionMissionVision -->
+<section class="glass-panel rounded-2xl p-8 md:p-14" id="mission">
+<!-- Metadata Tag -->
+<div class="flex items-center justify-between border-b border-white/10 pb-3 mb-10 text-[10px] tracking-[0.22em] uppercase text-white/40">
+<span>Slide 02 // Nilai &amp; Kerangka</span>
+<span>Keselarasan yang Disengaja</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+<!-- Left Sub-Block: MISSION -->
+<div class="lg:col-span-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 lg:pr-10 pb-8 lg:pb-0">
+<div class="space-y-4">
+<span class="text-xs uppercase tracking-[0.3em] font-semibold text-accent-glow">Tujuan Inti</span>
+<h2 class="font-display-title text-5xl sm:text-6xl text-neon tracking-tight uppercase leading-none">
+              Misi
+            </h2>
+<div class="thin-divider my-4"></div>
+<p class="text-white/70 text-sm md:text-base leading-relaxed font-sans">
+              Pernyataan misi adalah elemen dasar dari setiap usaha kreatif atau kreator individu. Sebagai social media content creator, pernyataan misi Anda harus merangkum tujuan unik, nilai-nilai, dan dampak bermakna yang ingin Anda ciptakan.
+            </p>
+<p class="text-white/60 text-xs md:text-sm leading-relaxed">
+              Fokus kami adalah mengangkat jangkauan brand Anda melalui citra yang digarap dengan sentuhan ahli, disiplin palet warna alami, serta strategi konten kreatif yang matang dan beresonansi di seluruh ekosistem digital.
+            </p>
+</div>
+<div class="mt-8 pt-4">
+<div class="aspect-[16/9] w-full overflow-hidden rounded bg-white/5">
+<img alt="Detail kain linen bertekstur bohemian" class="w-full h-full object-cover contrast-[100%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzMaW69DCV3bG2w9LvAP6G0dRARNVZcZWVtpO82cMylyRf8-hoxJbXE2B4KDs579ClU0rZdpnqoDdSCW3Q17iexhg5uD-Ly3XQQxxWikIb-ifVyzhpEAWNR15etNh7V1G346vZ7enJ1sFjntKRlmbWmjI8lCnUOJ_eeWU1AB3wku9OSVqNnF5R-LBK9jrLV7pVTvX6-QRn6qTeMQLUozbv0pySI6UWvbLRhfLssALOpLvBc0lIAx3y"/>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-white/40 block mt-2">Studi Tekstur Ã‚Â· Nada Bumi Hangat</span>
+</div>
+</div>
+<!-- Right Sub-Block: VISION -->
+<div class="lg:col-span-6 flex flex-col justify-between lg:pl-4">
+<div class="space-y-4">
+<span class="text-xs uppercase tracking-[0.3em] font-semibold text-accent-glow">Lintasan ke Depan</span>
+<h2 class="font-display-title text-5xl sm:text-6xl text-neon tracking-tight uppercase leading-none">
+              Visi
+            </h2>
+<div class="thin-divider my-4"></div>
+<p class="text-white/70 text-sm md:text-base leading-relaxed font-sans">
+              Pernyataan visi untuk social media content creator adalah deklarasi inspiratif yang mendefinisikan aspirasi jangka panjang dan budaya visual yang Anda bangun. Pernyataan visi yang baik harus jelas, menginspirasi, dan selaras dengan estetika organik Anda.
+            </p>
+<p class="text-white/60 text-xs md:text-sm leading-relaxed">
+              Visi tersebut harus menjadi filter yang jelas untuk kolaborasi brand potensial, memastikan setiap proyek memajukan kredibilitas estetika sekaligus koneksi komunitas yang tulus.
+            </p>
+</div>
+<div class="mt-8 pt-4">
+<div class="aspect-[16/9] w-full overflow-hidden rounded bg-white/5">
+<img alt="Interior botani dengan cahaya matahari hangat" class="w-full h-full object-cover contrast-[100%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjeQ93hhnM-49lXxUQLxV0MBSzih6TpQU9uNZ1IbdlVlwXWHfW2_gCt4sksV_j1O3oMq8ADJuwYAO2BSttKbhhxcmELIa_1wy-Ujc-P29OI0bnZQmMUtXks0rXyGDKT5CxI4lZ6eDu39zOzKPTyDHYx6bXpHDyXwK5yWsLobsaW2PIothD-79bVvZ98RkqXZXG2Yewaj2DOQRps9ZcCYt2eyWTGlRCxr1YfwAfcmr0h3WT02afmF9r"/>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-white/40 block mt-2">Lingkungan Ã‚Â· Cahaya Studio Menyebar</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SectionMissionVision -->
+<!-- BEGIN: SectionGetInTouch -->
+<footer class="glass-panel rounded-2xl p-8 md:p-14" id="contact">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left Half: Relaxed Visual Feature -->
+<div class="lg:col-span-7 overflow-hidden rounded bg-white/5 h-64 sm:h-80 md:h-96">
+<img alt="Postur gaya hidup santai editorial" class="w-full h-full object-cover contrast-[100%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZez2HB4bylZdS4vrp_WnYIOYbrNjFp4s_48E4j6puT9rESef1GUcUb6F3lKBamiRxCtISkp-HgKAsKlW0oZvlbyhQcpTQlJNcz73IvN4iS40IFXE0TAGjBhvbVlEfzdZJrskczA2ziGcti_E4LpT9BjLKWzp0uTOfhSDhmuBC8v-XieAG40rtT-vGbRu994OoxojQNh8SETjqIYBAG1CBe9Z9E0PKVgjbUJuD0QqHkwFPjgltjOx4"/>
+</div>
+<!-- Right Half: Contact Information & Direct Action -->
+<div class="lg:col-span-5 space-y-6 lg:pl-4">
+<div>
+<span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-accent-glow block mb-1">Enquiry Kolaborasi</span>
+<h2 class="font-display-title text-5xl sm:text-6xl text-neon tracking-tight leading-none uppercase">
+              Hubungi Kami
+            </h2>
+</div>
+<p class="text-xs sm:text-sm text-white/60 leading-relaxed font-sans">
+            Saat ini menerima kemitraan komersial terpilih, kontrak retainer konten editorial, serta konsultasi kreatif untuk siklus musiman mendatang.
+          </p>
+<!-- Contact Details Block -->
+<div class="space-y-3 pt-2 text-xs uppercase tracking-wider text-white/80">
+<div class="flex items-center gap-3 border-b border-white/10 pb-2">
+<span class="text-white/40 w-16">Telepon</span>
+<span class="font-medium font-sans lowercase">+123-456-7890</span>
+</div>
+<div class="flex items-center gap-3 border-b border-white/10 pb-2">
+<span class="text-white/40 w-16">Email</span>
+<span class="font-medium font-sans lowercase">hello@contentcreator.com</span>
+</div>
+<div class="flex items-center gap-3 border-b border-white/10 pb-2">
+<span class="text-white/40 w-16">Studio</span>
+<span class="font-medium font-sans">123 Creation St., Suite 04</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-white/40 w-16">Sosial</span>
+<span class="font-medium font-sans">@creator.studio</span>
+</div>
+</div>
+<!-- Direct Send CTA Button -->
+<div class="pt-3">
+<a class="block text-center w-full py-3.5 bg-gradient-to-r from-electro-400 via-viola-400 to-neonpink text-white font-medium text-xs tracking-[0.2em] uppercase transition-all hover:brightness-110 shadow-neon" href="mailto:hello@contentcreator.com">
+              Mulai Permintaan Proyek
+            </a>
+</div>
+</div>
+</div>
+<!-- Copyright Sub-Footer Strip -->
+<div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase tracking-widest text-white/40 gap-4">
+<span>Ã‚Â© Seluruh Hak Dilindungi Ã‚Â· Media Kit Content Creator</span>
+<span>Perspektif Kurasi Ã‚Â· Edisi Editorial Bukti Cetak</span>
+</div>
+</footer>
+<!-- END: SectionGetInTouch -->
+</main>
+<script>
+  (function () {
+    var btns = [].slice.call(document.querySelectorAll('.filter-btn'));
+    var cards = [].slice.call(document.querySelectorAll('.hero-card'));
+    var gallery = document.querySelector('.gallery-container');
+    if (!btns.length || !cards.length) return;
+    var SETS = {
+      all: [
+        { video: 'media/all1.mp4' },
+        { photo: 'media/all2.jpg' },
+        { photo: 'media/all3.jpg' },
+        { photo: 'media/all4.jpg' }
+      ],
+      visual: [
+        { video: 'media/drone1.mp4' },
+        { video: 'media/drone2.mp4' },
+        { video: 'media/drone3.mp4' },
+        { video: 'media/drone4.mp4' }
+      ],
+      photography: [
+        { photo: 'media/photo1.jpg' },
+        { photo: 'media/photo3.jpg' },
+        { photo: 'media/photo4.jpg' }
+      ],
+      leadership: [
+        { photo: 'media/lead1.JPG' },
+        { photo: 'media/lead2.jpg' },
+        { photo: 'media/lead3.jpg' },
+        { photo: 'media/lead4.jpg' }
+      ]
+    };
+    function mediaOf(card, m) {
+      var img = card.querySelector('img');
+      var vid = card.querySelector('video');
+      if (m && m.video) {
+        if (vid) {
+          vid.src = m.video;
+          vid.load();
+          var pr = vid.play(); if (pr && pr.catch) pr.catch(function () {});
+          vid.classList.remove('hidden');
+        }
+        if (img) img.classList.add('hidden');
+      } else {
+        if (vid) { vid.pause(); vid.classList.add('hidden'); }
+        if (img) {
+          if (m && m.photo) img.src = m.photo;
+          img.classList.remove('hidden');
+        }
+      }
+    }
+    function apply(cat) {
+      var set = SETS[cat] || SETS.all;
+      if (gallery) {
+        if (cat === 'visual') gallery.classList.add('mode-drone');
+        else gallery.classList.remove('mode-drone');
+      }
+      cards.forEach(function (card, i) {
+        var m = set[i];
+        if (!m) {
+          card.style.display = 'none';
+          return;
+        }
+        card.style.display = '';
+        card.classList.add('is-hidden');
+        setTimeout(function () {
+          mediaOf(card, m);
+          card.classList.remove('is-hidden');
+          card.classList.add('is-in');
+          setTimeout(function () { card.classList.remove('is-in'); }, 500);
+        }, 400 + i * 90);
+      });
+    }
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        apply(btn.getAttribute('data-filter'));
+      });
+    });
+    apply('all');
+  })();
+</script>
+<script>
+  (function () {
+    var el = document.getElementById('heroTitle');
+    if (!el) return;
+    var FINAL = 'PORTOFOLIO';
+    var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&@';
+
+    function fit() {
+      var size = Math.max(40, Math.min(144, window.innerWidth * 0.10));
+      el.style.fontSize = size + 'px';
+      var guard = 0;
+      while (el.scrollWidth > el.clientWidth && guard < 100 && size > 16) {
+        size *= el.clientWidth / el.scrollWidth;
+        el.style.fontSize = size + 'px';
+        guard++;
+      }
+      size *= 0.96;
+      el.style.fontSize = size + 'px';
+    }
+
+    /* Cyber scramble: random chars locking into the final word, ~0.6s */
+    function scramble() {
+      var frames = 12;
+      var dur = 600;
+      for (var i = 0; i <= frames; i++) {
+        (function (f) {
+          setTimeout(function () {
+            var done = Math.round(f / frames * FINAL.length);
+            var s = '';
+            for (var j = 0; j < FINAL.length; j++) {
+              s += j < done ? FINAL.charAt(j) : CHARS.charAt(Math.floor(Math.random() * CHARS.length));
+            }
+            el.textContent = s;
+          }, f * (dur / frames));
+        })(i);
+      }
+    }
+
+    /* measure once the font is loaded, then scramble, then re-fit after reveal */
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () {
+        fit();
+        scramble();
+        setTimeout(fit, 1500);
+      }).catch(function () {
+        fit();
+        scramble();
+        setTimeout(fit, 1500);
+      });
+    } else {
+      fit();
+      scramble();
+      setTimeout(fit, 1500);
+    }
+    window.addEventListener('resize', fit);
+  })();
+</script>
+</body></html>
